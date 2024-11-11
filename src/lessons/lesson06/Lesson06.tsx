@@ -103,7 +103,7 @@ export default function Lesson06() {
 
 
     return (
-        <div>
+        <div className="lesson-container">
             <h2>Lesson06</h2>
             <p>React TypeScript</p>
             <p>Самое важное на этом уроке происходит внутри компонента в теле функции и в консоли браузера ⚡️</p>
