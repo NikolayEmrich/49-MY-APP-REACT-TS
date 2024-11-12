@@ -1,4 +1,13 @@
-function HeroCard({isDark, name, image, age, weapons}) {
+// Интерфейс для типизации функции ниже в TS
+interface IHeroCardProps {
+  isDark: boolean
+  name: string
+  image: string
+  age: number
+  weapons: string[];
+}
+
+function HeroCard({isDark, name, image, age, weapons}:IHeroCardProps) {
   return (
     <article className={isDark ? 'hero-dark' : 'hero-light'}>
     <h3>{name}</h3>

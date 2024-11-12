@@ -1,14 +1,14 @@
 import MyButton from '../../components/myButton/myButton'
 
-function Lesson03() {
+function Lesson03():JSX.Element {
 
-    const handleClick = () => {
+    const handleClick = (): void => {
         console.log('click!')
     }
-    const handleSubmit = () => {
+    const handleSubmit = (): void => {
         console.log('submit!')
     }
-    const handleReset = () => {
+    const handleReset = (): void => {
         console.log('reset!')
     }
 

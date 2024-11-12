@@ -16,11 +16,19 @@
 // Забираем значения из объекта по ключам и кладем их в переменные с определенным именем в одну строчку
 import './myButton.css'
 
+interface IMyButtonProps {
+     text?: string,
+     isDanger?: boolean
+     myType?: "button" | "submit" | "reset"
+     func?: () => void
+}
+
 const handleDefaultClick = () => {
      console.log('default click!')
 }
 
-function MyButton({func = handleDefaultClick, isDanger = true, text = 'Click', myType = 'button'}) {
+// Интерфейс указываем вкруглых скобках после деструктуризации пропс после двоеточия
+function MyButton({func = handleDefaultClick, isDanger = true, text = 'Click', myType = 'button'}:IMyButtonProps) {
      console.log(isDanger)
      return <button 
           type = {myType}

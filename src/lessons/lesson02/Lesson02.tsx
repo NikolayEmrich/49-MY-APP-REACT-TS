@@ -4,18 +4,24 @@ import MyButton from '../../components/myButton/myButton'
 import './lesson02.css'
 
 // Функция-компонент называется с большой буквы
-function Lesson02() {
+function Lesson02():JSX.Element {
     const element = <li>Element is variable</li>
     const text  ='Text for JSX tag'
     const company = "Facebook"
 
-    const user = {
+    // Добавлена типизация для TSX
+    interface IUser {
+      firstName: string
+      lastName: string
+    }
+
+    const user: IUser = {
         firstName: 'Brendan',
         lastName: 'Eich'
       }
 
     // Функция, обрабатывающая данные объекта
-    function formatUser(name) {
+    function formatUser(name: IUser) {
         return name.firstName + ' ' + name.lastName;
     }
 

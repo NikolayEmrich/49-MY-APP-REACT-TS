@@ -1,9 +1,4 @@
-.counter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90px;
-}
+
 
 .state-practice span {
   margin-right: 10px;

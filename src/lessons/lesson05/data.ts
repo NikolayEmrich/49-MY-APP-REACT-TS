@@ -1,3 +1,12 @@
+export interface IHero {
+  id: number
+      name: string
+      age: number
+      isDark: boolean
+      image: string
+      weapons: string[]
+}
+
 export const heroes = [
     {
       id:1,

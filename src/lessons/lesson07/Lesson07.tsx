@@ -1,4 +1,5 @@
 import React from 'react'
+import MyButton from '../../components/myButton/myButton'
 
 export default function Lesson07() {
 
@@ -88,12 +89,27 @@ const cat: Animal = {
     hasOwner: true
 }
 
+// Вызов WOOF!
+// dog.sound()
+
+// *   -------  Generics type.  --------
+
+function makeArray<T>(first:T, second:T):T[] {
+    return[first, second]
+}
+
+const arr1:number[] = makeArray<number>(42, 100)
+console.log(arr1)
+
+const arr2:string[] = makeArray<string>('apple', 'orange')
+console.log(arr2)
 
 
   return (
     <div className='lesson-container'>
         <h2>Lesson07</h2>
         <p>React TypeScript Part 2.</p>
+        <MyButton text='TypeScript button'/>
         </div>
   )
 }
