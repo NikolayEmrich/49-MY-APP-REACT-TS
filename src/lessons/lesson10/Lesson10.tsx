@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MyButton from '../../components/myButton/myButton'
 import styles from './lesson10.module.css'
 import Loader from '../../components/loader/Loader'
+import cn from 'classnames'
 
 interface ICatData {
     fact: string
@@ -60,7 +61,8 @@ export default function Lesson10():JSX.Element {
             </div>
 
             {loading ? <Loader/> : (
-            <div className={styles.catWrapper}>
+            <div className={cn(styles.catWrapper, {[styles.clearBackGround]:catFacts.length === 0})} 
+            >
                 <div className={styles.content}>
 
                     {/* ПРАВКА: Изменение отображения одного факта с обновлением -> для массива фактов */}
