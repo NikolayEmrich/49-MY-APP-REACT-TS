@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "deploy": "npm run build && gh-pages -d build",
     "eject": "react-scripts eject",
-    "pushall": "git add . && git commit -m 'pushall' && git push"
+    "makeall": "git add . && git commit -m 'makeall' && git push && npm run deploy" 
   },
   "eslintConfig": {
     "extends": [
