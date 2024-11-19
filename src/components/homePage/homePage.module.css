@@ -19,6 +19,14 @@
     background-color: rgb(100, 94, 152);
     color: white;
   }
+
+  .homework {
+    background-color: #789f80 !important;
+  }
+
+  .homework:hover {
+    background-color: #94ba9c !important;
+  }
   
   .gridLessonContainer div:hover {
     background-color: rgb(196, 188, 255);

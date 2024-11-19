@@ -18,6 +18,11 @@ import Lesson09 from './lessons/lesson09/Lesson09';
 import Lesson10 from './lessons/lesson10/Lesson10';
 import Lesson11 from './lessons/lesson11/Lesson11';
 import Lesson12 from './lessons/lesson12/Lesson12';
+import Homework03 from './homeworks/homework03/Homework03';
+import Homework04 from './homeworks/homework04/Homework04';
+import Homework05 from './homeworks/homework05/Homework05';
+import Homework12 from './homeworks/homework12/Homework12';
+import Lesson13 from './lessons/lesson13/Lesson13';
 
 
 const root = ReactDOM.createRoot(
@@ -48,6 +53,12 @@ root.render(
         <Route path="lesson-10" element={<Lesson10 />} />
         <Route path="lesson-11" element={<Lesson11 />} />
         <Route path="lesson-12" element={<Lesson12/>} />
+        <Route path="lesson-13" element={<Lesson13/>} />
+        <Route path="homework-3" element={<Homework03/>} />
+        <Route path="homework-4" element={<Homework04/>} />
+        <Route path="homework-5" element={<Homework05/>} />
+        <Route path="homework-12" element={<Homework12/>} />
+        
         
       </Route>
     </Routes>
