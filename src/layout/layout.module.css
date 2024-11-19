@@ -1,24 +1,3 @@
-.header {
-    width: 100%;
-    height: 80px;
-    color: white;
-    background-color: rgb(222, 151, 18);
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    padding: 0px 40px;
-  }
-  
-  .header a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .header a:hover {
-    text-decoration: underline;
-  }
-  
-  /* класс модификатор, который добавляется к активной ссылке меню */
-  .linkActive {
-    text-decoration: underline !important;
-  }
+.main {
+  flex: 1;
+}

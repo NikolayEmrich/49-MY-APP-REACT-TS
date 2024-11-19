@@ -13,9 +13,14 @@ html {
 
 #root {
   display: flex;
-  min-height: 100%;
+  min-height: 100vh;
   flex-direction: column;
 }
+
+/* Убираем и прописываем в layout */
+/* main {
+  flex: 1;
+} */
 
 h1,
 h2,
@@ -36,8 +41,8 @@ li {
   margin-top: 20px;
 }
 
-.lesson-container > h2 {
-  margin-bottom: 14px;
+.lesson-container > h2, li {
+  margin-bottom: 8px;
 }
 
 .task-container {

@@ -1,22 +1,23 @@
 import React from 'react'
 import styles from './layout.module.css'
 import { NavLink, Outlet } from 'react-router-dom'
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
+
 
 export default function Layout() {
   return (
-    <div>
-        <header className={styles.header}>
+    <>
+        
+          {/* Здесь будет вызов компонента header для верстки шапки сайта */}
+          <Header/>
 
-            <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={"/"}>Home page</NavLink>
-            <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={"fetch-dog"}>Fetch dog</NavLink>
-            <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={"hero-gallery"}>Hero gallery</NavLink>
-
-        </header>
-        <main>
+        <main className={styles.main}>
             {/* за место компонента Outlet будут приходить переключаемые компоненты из маршрутизации */}
             <Outlet/>
 
         </main>
-    </div>
+        <Footer/>
+    </>
   )
 }
