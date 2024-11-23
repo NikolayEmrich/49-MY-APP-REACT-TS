@@ -23,6 +23,12 @@ import Homework04 from './homeworks/homework04/Homework04';
 import Homework05 from './homeworks/homework05/Homework05';
 import Homework12 from './homeworks/homework12/Homework12';
 import Lesson13 from './lessons/lesson13/Lesson13';
+import GenderForm from './components/genderForm/GenderForm';
+import Lesson14 from './lessons/lesson14/Lesson14';
+import ProductPage from './components/productPage/ProductPage';
+import Lesson16 from './lessons/lesson16/Lesson16';
+import StorePage from './components/storePage/StorePage';
+import StoreHW from './homeworks/homework16/storeHW/StoreHW';
 
 
 const root = ReactDOM.createRoot(
@@ -41,6 +47,9 @@ root.render(
         <Route path="/" element={<HomePage/>} />
         <Route path="fetch-dog" element={<FetchDog />} />
         <Route path="hero-gallery" element={<HeroGallery data={heroes} />} />
+        <Route path="gender-form" element={<GenderForm/>} />
+        <Route path="store" element={<StoreHW/>} />
+
         <Route path="lesson-1" element={<Lesson01 />} />
         <Route path="lesson-2" element={<Lesson02 />} />
         <Route path="lesson-3" element={<Lesson03 />} />
@@ -54,10 +63,17 @@ root.render(
         <Route path="lesson-11" element={<Lesson11 />} />
         <Route path="lesson-12" element={<Lesson12/>} />
         <Route path="lesson-13" element={<Lesson13/>} />
+        <Route path="lesson-14" element={<Lesson14/>} />
+        <Route path="lesson-14/:id" element={<ProductPage/>} />
+        <Route path="lesson-16" element={<Lesson16/>} />
+        <Route path="lesson-16/:id" element={<StorePage/>} />
+        <Route path="store/:id" element={<StorePage/>} />
+        
         <Route path="homework-3" element={<Homework03/>} />
         <Route path="homework-4" element={<Homework04/>} />
         <Route path="homework-5" element={<Homework05/>} />
         <Route path="homework-12" element={<Homework12/>} />
+        
         
         
       </Route>

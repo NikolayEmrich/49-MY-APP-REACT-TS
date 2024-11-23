@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import styles from './genderForm.module.css';
+import * as Yup from 'yup'
 
 // * типизация данных в input
 interface IFormData {
@@ -14,6 +15,18 @@ interface IGenderData {
     gender: string,
     probability: number;
   }
+
+// Схема валидации
+const schema = Yup.object().shape({
+  name: Yup
+    .string()
+    .typeError('Ваше имя должно состоять из букв')
+    .required('Поле обязательно к заполнению')
+    .min(1, 'Ваше имя должно быть больше одного символа')
+    .max(20, 'Слишком большое имя 😳')
+    .matches(/^[A-Za-z\s]+$/, "Имя должно содержать только буквы и пробелы")
+    .matches(/^[A-Z]/, "Имя должно начинаться с большой буквы")
+});
 
 export default function GenderForm() {
 
@@ -43,7 +56,7 @@ export default function GenderForm() {
     validateOnChange: false,
 
     // подключаем схему валидации ----------
-    
+    validationSchema: schema,
 
     // действие, которое случится по нажатию кнопки с типом submit в форме
     onSubmit: (values: IFormData, { resetForm }) => {
@@ -51,6 +64,7 @@ export default function GenderForm() {
       fetchGender(values.name);
     }
   });
+
   return (
     <div className="lesson-container">
       <h5>Know your gender ✨</h5>
