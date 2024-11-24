@@ -37,7 +37,7 @@ export default function ProductPage() {
       <h3>{product.title}</h3>
       <p>{product.description}</p>
       <img width={200} src={product.image} alt="" />
-      <Link to={'../lesson-14'}>back to products</Link>
+      <Link to={'../products'}>back to products</Link>
     </div>
   )
 }

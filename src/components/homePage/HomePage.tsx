@@ -26,6 +26,7 @@ export default function HomePage() {
       <Link to='lesson-12'><div>Lesson 12</div></Link>
       <Link to='lesson-13'><div>Lesson 13</div></Link>
       <Link to='lesson-14'><div>Lesson 14</div></Link>
+      <Link to='lesson-15'><div>Lesson 15</div></Link>
       <Link to='lesson-16'><div>Lesson 16</div></Link>
       
     </div>

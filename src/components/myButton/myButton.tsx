@@ -30,7 +30,7 @@ const handleDefaultClick = () => {
 
 // Интерфейс указываем вкруглых скобках после деструктуризации пропс после двоеточия
 function MyButton({func = handleDefaultClick, isDanger = true, text = 'Click', myType = 'button'}:IMyButtonProps) {
-     console.log(isDanger)
+     // console.log(isDanger)
      return <button 
           type = {myType}
           onClick = {func} 

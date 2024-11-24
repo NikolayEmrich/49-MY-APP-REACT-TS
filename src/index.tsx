@@ -29,25 +29,37 @@ import ProductPage from './components/productPage/ProductPage';
 import Lesson16 from './lessons/lesson16/Lesson16';
 import StorePage from './components/storePage/StorePage';
 import StoreHW from './homeworks/homework16/storeHW/StoreHW';
+import Products from './components/products/Products';
+import NoPage from './components/noPage/NoPage';
+import Lesson15 from './lessons/lesson15/Lesson15';
+import { CartProvider } from './components/context/cartContext';
+import Cart from './components/cart/Cart';
 
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  // импортируем HashRouter из react-router-dom и оборачиваем им все приложение
-  // Свойство future было дописано на Уроке №12 для удаления ошибок при работе с formik
+  // CartProvider добавлен на 15-ом уроке для работой с Context
+  <CartProvider>
+
+     {/* импортируем HashRouter из react-router-dom и оборачиваем им все приложение
+    Свойство future было дописано на Уроке №12 для удаления ошибок при работе с formik */}
   <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     {/* импортируем компонент Routes (пути) и оборачиваем вокруг всех компонентов */}
     <Routes>
       {/* в корневой обертке Route указываем props: element и path */}
       {/* в качестве корневого элемента указываем Layout */}
       <Route path="/" element={<Layout />}>
+
         {/* пути ниже будут приходить на место Outlet в Layout */}
         <Route path="/" element={<HomePage/>} />
         <Route path="fetch-dog" element={<FetchDog />} />
         <Route path="hero-gallery" element={<HeroGallery data={heroes} />} />
         <Route path="gender-form" element={<GenderForm/>} />
+        <Route path="products" element={<Products/>} />
+        <Route path="products/:id" element={<ProductPage/>} />
+        <Route path="cart" element={<Cart/>} />
         <Route path="store" element={<StoreHW/>} />
 
         <Route path="lesson-1" element={<Lesson01 />} />
@@ -66,6 +78,7 @@ root.render(
         <Route path="lesson-14" element={<Lesson14/>} />
         <Route path="lesson-14/:id" element={<ProductPage/>} />
         <Route path="lesson-16" element={<Lesson16/>} />
+        <Route path="lesson-15" element={<Lesson15/>} />
         <Route path="lesson-16/:id" element={<StorePage/>} />
         <Route path="store/:id" element={<StorePage/>} />
         
@@ -74,11 +87,12 @@ root.render(
         <Route path="homework-5" element={<Homework05/>} />
         <Route path="homework-12" element={<Homework12/>} />
         
-        
-        
+        <Route path="*" element={<NoPage/>} />
+
       </Route>
     </Routes>
   </HashRouter>
+  </CartProvider>
 );
 
 

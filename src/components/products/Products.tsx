@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { IProduct } from "../../types/type";
 import styles from "./products.module.css";
 import { Link } from "react-router-dom";
+import MyButton from "../myButton/myButton";
+import ShopProduct from "../shopProduct/ShopProduct";
+import Cart from "../cart/Cart";
 
 export default function Products() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -11,7 +14,7 @@ export default function Products() {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
     setProducts(data);
-    console.log(data);
+    // console.log(data);
   };
 
   useEffect(() => {
@@ -20,15 +23,13 @@ export default function Products() {
 
   return (
     <div>
+
+      {/* Импорт корзины прямо сверху списка продуктов */}
+      <Cart/>
+
       <div className={styles.shopContainer}>
         {products.map((el) => (
-          <div className={styles.shopContainerCard} key={el.id}>
-            <h3>{el.title}</h3>
-            <div className={styles.imgWrapper}>
-              <img src={el.image} alt="" />
-            </div>
-            <Link to={String(el.id)}>To products</Link>
-          </div>
+          <ShopProduct key={el.id} id={el.id} price={el.price} title={el.title} image={el.image}/>
         ))}
       </div>
     </div>
